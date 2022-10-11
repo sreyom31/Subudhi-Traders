@@ -6,7 +6,7 @@ import {
 import CustomerItemSchema from './customerItem.schema';
 
 const CustomerItemModel = model<ICustomerItemDocument, ICustomerItemModel>(
-  'customer',
+  'customerItem',
   CustomerItemSchema
 );
 export default CustomerItemModel;
