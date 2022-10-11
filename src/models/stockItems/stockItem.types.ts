@@ -1,19 +1,20 @@
 import { Document, Model, Types } from 'mongoose';
 
-export interface ICustomerItem {
-  customerName: Types.ObjectId;
-  itemName: string;
+export interface IStockItem {
+  name: string;
+  category: Types.ObjectId;
   price: number;
   quantity: number;
+  isAvailable: boolean;
   dateOfEntry: Date;
   lastUpdated: Date;
 }
 
-export interface ICustomerItemDocument extends ICustomerItem, Document {
-  setLastUpdated: (this: ICustomerItemDocument) => Promise<void>;
+export interface IStockItemDocument extends IStockItem, Document {
+  setLastUpdated: (this: IStockItemDocument) => Promise<void>;
 }
 
-export interface ICustomerItemModel extends Model<ICustomerItemDocument> {
+export interface IStockItemModel extends Model<IStockItemDocument> {
   paginate: (
     filter: any,
     options: any
