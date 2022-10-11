@@ -1,7 +1,11 @@
 import { Schema } from 'mongoose';
 import validator from 'validator';
 import { setLastUpdated } from './customer.methods';
-import { isEmailTaken } from './customer.statics';
+import {
+  isEmailTaken,
+  isPhoneNoTaken,
+  isWhatsappNoTaken,
+} from './customer.statics';
 import { toJSON, paginate } from '../plugins';
 
 const CustomerSchema = new Schema({
@@ -12,7 +16,6 @@ const CustomerSchema = new Schema({
   },
   email: {
     type: String,
-    required: [true, 'Email is required'],
     trim: true,
     unique: true,
     lowercase: true,
@@ -26,15 +29,14 @@ const CustomerSchema = new Schema({
   },
   phoneNo: {
     type: String,
-    required: [true, 'Phone Number is required'],
+    required: [true, 'Phone number is required'],
   },
   whatsappNo: {
     type: String,
-    required: [true, 'Whatsapp Number is required'],
+    required: [true, 'Whatsapp number is required'],
   },
   isImp: {
     type: Boolean,
-    required: [true, 'Is Important is required'],
   },
   dateOfEntry: {
     type: Date,
@@ -51,5 +53,7 @@ CustomerSchema.plugin(toJSON);
 CustomerSchema.plugin(paginate);
 CustomerSchema.methods.setLastUpdated = setLastUpdated;
 CustomerSchema.statics.isEmailTaken = isEmailTaken;
+CustomerSchema.statics.isPhoneNoTaken = isPhoneNoTaken;
+CustomerSchema.statics.isWhatsappNoTaken = isWhatsappNoTaken;
 
 export default CustomerSchema;

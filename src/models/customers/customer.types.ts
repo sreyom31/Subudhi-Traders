@@ -22,6 +22,16 @@ export interface ICustomerModel extends Model<ICustomerDocument> {
     name: string,
     excludeId?: string
   ) => Promise<boolean>;
+  isPhoneNoTaken: (
+    this: ICustomerModel,
+    name: string,
+    excludeId?: string
+  ) => Promise<boolean>;
+  isWhatsappNoTaken: (
+    this: ICustomerModel,
+    name: string,
+    excludeId?: string
+  ) => Promise<boolean>;
   paginate: (
     filter: any,
     options: any
