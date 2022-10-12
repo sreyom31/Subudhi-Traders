@@ -7,6 +7,7 @@ const CategorySchema = new Schema({
     type: String,
     required: [true, 'Name is required'],
     trim: true,
+    unique: true,
   },
   dateOfEntry: {
     type: Date,

@@ -32,3 +32,11 @@ export type CustomerUpdate = {
   whatsappNo?: string;
   isImp?: boolean;
 };
+
+export type Category = {
+  name: string;
+};
+
+export type CategoryUpdate = {
+  name: string;
+};
