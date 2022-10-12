@@ -19,7 +19,6 @@ const CustomerSchema = new Schema({
     trim: true,
     unique: true,
     lowercase: true,
-    validate: [validator.isEmail, 'Please provide a valid email'],
   },
   dueAmount: {
     type: Number,
@@ -29,11 +28,14 @@ const CustomerSchema = new Schema({
   },
   phoneNo: {
     type: String,
+    trim: true,
+    unique: true,
     required: [true, 'Phone number is required'],
   },
   whatsappNo: {
     type: String,
-    required: [true, 'Whatsapp number is required'],
+    trim: true,
+    unique: true,
   },
   isImp: {
     type: Boolean,

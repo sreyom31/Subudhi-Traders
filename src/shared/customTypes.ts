@@ -12,3 +12,23 @@ export type UserUpdate = {
   designation?: string;
   isEmailVerified?: boolean;
 };
+
+export type Customer = {
+  name: string;
+  email?: string;
+  dueAmount?: number;
+  isCleared?: boolean;
+  phoneNo: string;
+  whatsappNo?: string;
+  isImp?: boolean;
+};
+
+export type CustomerUpdate = {
+  name?: string;
+  email?: string;
+  dueAmount?: number;
+  isCleared?: boolean;
+  phoneNo?: string;
+  whatsappNo?: string;
+  isImp?: boolean;
+};

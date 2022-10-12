@@ -1,5 +1,4 @@
 import { Model } from 'mongoose';
-import { string } from 'zod';
 import { ICustomerDocument } from './customer.types';
 
 export async function isEmailTaken(
