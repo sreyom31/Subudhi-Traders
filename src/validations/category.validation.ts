@@ -8,12 +8,14 @@ const createCategory = z.object({
 });
 
 const getCategories = z.object({
-  query: z.object({
-    categoryName: z.string().trim(),
-    sortBy: z.string(),
-    limit: z.number().int(),
-    page: z.number().int(),
-  }),
+  query: z
+    .object({
+      categoryName: z.string().trim(),
+      sortBy: z.string(),
+      limit: z.number().int(),
+      page: z.number().int(),
+    })
+    .partial(),
 });
 
 const getCategory = z.object({
