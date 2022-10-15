@@ -1,5 +1,4 @@
 import { Schema } from 'mongoose';
-import validator from 'validator';
 import { setLastUpdated } from './customer.methods';
 import {
   isEmailTaken,
@@ -17,7 +16,6 @@ const CustomerSchema = new Schema({
   email: {
     type: String,
     trim: true,
-    unique: true,
     lowercase: true,
   },
   dueAmount: {
@@ -35,7 +33,6 @@ const CustomerSchema = new Schema({
   whatsappNo: {
     type: String,
     trim: true,
-    unique: true,
   },
   isImp: {
     type: Boolean,

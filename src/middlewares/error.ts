@@ -31,9 +31,9 @@ const errorConverter = (
   let error = { ...err };
   error.message = err.message;
   if (error.name === 'CastError') error.message = handleCastErrorDB(error);
-  if (error.code === 11000)
-    // TODO check this , its not working properly
-    error.message = handleDuplicateFieldsDB(error);
+  // if (error.code === 11000)
+  //   // TODO check this , its not working properly
+  //   error.message = handleDuplicateFieldsDB(error);
   if (error.name === 'ValidationError')
     error.message = handleValidationErrorDB(error);
   if (!(err instanceof ApiError)) {
