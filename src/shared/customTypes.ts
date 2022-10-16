@@ -56,3 +56,21 @@ export type StockItemUpdate = {
   quantity?: number;
   isAvailable?: boolean;
 };
+
+export type CustomerItem = {
+  customerName: string;
+  itemName: string;
+  price: number;
+  quantity: number;
+  dateOfEntry: Date;
+  lastUpdated: Date;
+};
+
+export type CustomerItemUpdate = {
+  customerName?: string;
+  itemName?: string;
+  price?: number;
+  quantity?: number;
+  dateOfEntry?: Date;
+  lastUpdated?: Date;
+};
