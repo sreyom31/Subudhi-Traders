@@ -40,3 +40,19 @@ export type Category = {
 export type CategoryUpdate = {
   name: string;
 };
+
+export type StockItem = {
+  name: string;
+  category: string;
+  price: number;
+  quantity: number;
+  isAvailable: boolean;
+};
+
+export type StockItemUpdate = {
+  name?: string;
+  category?: string;
+  price?: number;
+  quantity?: number;
+  isAvailable?: boolean;
+};

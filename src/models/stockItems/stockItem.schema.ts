@@ -24,6 +24,7 @@ const StockItemSchema = new Schema({
   isAvailable: {
     type: Boolean,
     required: [true, 'Availability is required'],
+    default: true,
   },
   dateOfEntry: {
     type: Date,
